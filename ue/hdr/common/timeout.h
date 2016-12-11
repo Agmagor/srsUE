@@ -51,7 +51,9 @@ class timeout_callback
 class timeout
 {
 public:
-  timeout():running(false),callback(NULL), thread(0), timeout_id(0) {}
+  timeout()
+      : running(false), callback(NULL), thread(0), timeout_id(0),
+        duration_msec(0), start_time() {}
   ~timeout()
   {
     if(running && callback)
